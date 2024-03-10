@@ -3,6 +3,10 @@ import type { AppProps } from "next/app";
 import {Header} from "../components/header";
 import { SessionProvider } from "next-auth/react"
 
+//inicializa o firebase
+import { initializeFirebase } from '../services/firebaseConnection';
+initializeFirebase();
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <SessionProvider session={pageProps.session}>
